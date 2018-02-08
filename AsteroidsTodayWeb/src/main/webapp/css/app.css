@@ -1,0 +1,43 @@
+html {
+  background-color: #f0f0f0;
+}
+
+body {
+  font-family: Helvetica, Arial;
+  font-size: 12px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  margin: 0px auto; 
+  padding: 20px 20px; 
+  width: 750px;
+}
+
+h2 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+div.asteroidlist {
+    
+}
+
+div.asteroidlist > table {
+  width: 75%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+
+div.asteroidlist > table > tbody > tr > td, div.asteroidlist > table > thead > tr > th {
+  padding: 2px 10px;
+  border-left: 1px dotted #000000;
+  vertical-align: top;
+  line-height: 20px;
+}
+
+div.asteroidlist > table > tbody > tr, div.asteroidlist > table > thead > tr {
+  border-bottom: 1px solid #000000;
+}
+
+div.asteroidlist > table th {
+  background-color: #f59713;
+}

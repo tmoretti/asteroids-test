@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Sul America Asteroids WebApp</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/app.css" th:href="@{/css/app.css}"/>
+</head>
+<body>
+    <div>
+      <img src="../../images/logo-sulamerica.png" alt="Sul America logo" title="Sul America logo" 
+           th:src="@{/images/logo-sulamerica.png}"/>
+    </div>
+    
+    <div class="asteroidlist" th:if="${#lists.isEmpty(asteroids)}">
+	  <h2 th:text="#{sky.clear.message}">Não há meteoros ameaçadores para a Terra hoje, pode ficar em paz</h2>
+    </div>
+    
+    <div class="asteroidlist" th:unless="${#lists.isEmpty(asteroids)}">
+    
+	  <h2 th:text="#{sky.hazard.message}">Existem ameaças do espaço hoje, fique atento</h2>
+	  
+	  <table>
+	    <thead>
+	      <tr>
+	        <th>#</th>
+	        <th th:text="#{asteroid.reference.label}">ID</th>
+	        <th th:text="#{asteroid.reference.name}">Nome</th>
+	        <th th:text="#{asteroid.reference.speed}">Km/h</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr th:each="asteroid : ${asteroids}">
+       		<td>1</td>
+	        <td th:text="${asteroid.referenceId}"></td>
+	        <td th:text="${asteroid.name}"></td>
+	        <td th:text="${asteroid.kmPerHour}"></td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+
+</body>
+</html>
